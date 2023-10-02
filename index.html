@@ -2,23 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SWE432</title>
 </head>
 <body>
     <nav>
         <div class="NavLeft">
-            <img class="navImg" src="">
-            <p class="Text NavLabel">Name</p>
+            <img class="NavImg" src="">
+            <p class="Text NavLabel">Station</p>
+        </div>
+        <div class="NavRight">
+            <ul>
+                <li>
+                    <a href="Home" class="Text">Home</a>
+                </li>
+                <li>
+                    <a href="About" class="Text">About</a>
+                </li>
+                <li>
+                    <a href="Stations" class="Text">Stations</a>
+                </li>
+                <li>
+                    <a href="Artists" class="Text">Artists</a>
+                </li>
+                <li>
+                    <a href="Settings" class="Text">Settings</a>
+                </li>
+            </ul>
         </div>
     </nav>
+    <div class="Sidebar">
+        <p class="SideBarLabel Text">
+            Currently Playing
+        </p>
+        <ul>
+            
+        </ul>
+    </div>
     <div class="Content">
-        <div class="Sidebar">
-
-        </div>
-        <div class="FocusContent">
-
+        <div class="MainGrid">
+            <div class="FocusContent">
+                <div class="Search">
+                    <form class="Form">
+                        <input type="text" clsss="SearchBox" placeholder="Search"/>
+                        <input type="submit" class="Submit"/>
+                    </form>
+                </div>
+            <div class="SongGrid">
+                    <div class="SongContentBox">
+                        <img src="./Assets/JazzImg.png">
+                        <p class="Text">Jazz song 1</p>
+                    </div>
+                    <div class="SongContentBox">
+                        <img src="./Assets/JazzImg.png">
+                        <p class="Text">Jazz song 2</p>
+                    </div>
+                    <div class="SongContentBox">
+                        <img src="./Assets/JazzImg.png">
+                        <p class="Text">Jazz song 3</p>
+                    </div>
+                    <div class="SongContentBox">
+                        <img src="./Assets/JazzImg.png">
+                        <p class="Text">Jazz song 4</p>
+                    </div>
+                    <div class="SongContentBox">
+                        <img src="./Assets/JazzImg.png">
+                        <p class="Text">Jazz song 5</p>
+                    </div>
+                    <div class="SongContentBox">
+                        <img src="./Assets/JazzImg.png">
+                        <p class="Text">Jazz song 6</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
 </html>
+
