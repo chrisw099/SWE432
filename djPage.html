@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="djstyle.css">
+    <title>SWE432 DJ Screen</title>
+</head>
+<body>
+    <nav>
+        <div class="NavLeft">
+            <img class="NavImg" src="">
+            <p class="Text NavLabel">Station</p>
+        </div>
+        <div class="NavRight">
+            <ul>
+                <li>
+                    <a href="Home" class="Text">Home</a>
+                </li>
+                <li>
+                    <a href="About" class="Text">About</a>
+                </li>
+                <li>
+                    <a href="Stations" class="Text">Stations</a>
+                </li>
+                <li>
+                    <a href="Artists" class="Text">Artists</a>
+                </li>
+                <li>
+                    <a href="Settings" class="Text">Settings</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="Content">
+
+        <!-- Containts the 3 columns used to display information-->
+        <div class ="MainGrid" style= "grid-template-columns: 1fr 1fr 1fr; width:100%; justify-content:center; min-height: 50vh; max-height:90vh; grid-auto-flow:column">
+
+            <!--Contains first column content related to timeslot AND the button to begin editing-->
+            <div class="TimeslotContentBox">
+
+                <h1>Timeslots</h1>
+
+                <div class="Search">
+                    <input type="text" style = "height:0.5em;" placeholder="Search Timeslots...">
+                    </div>
+                    <!-- Dynamically populated with Javascript. Placeholder. Justified to start to line up with other scroll boxes-->
+                    <div class="ScrollList" style="justify-content: start;">
+                        <select name = "tSlots" size = "10">
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                           
+                        </select>
+
+                    </div>
+
+                <!--To be updated by selection in timeslot scrollist using javascript-->
+                <div class="TimeslotInfo">
+                    <h2>Timeslot Information</h2>
+                    <br>
+                    Timeslot: 9:00PM
+                    <br>
+                    DJ: DJ Name
+                    <br>
+                    Current Playlist: Coooooool Playlist
+                </div>
+                
+                <!-- Used to begin editing process, after pushing the column selections are validated towards making changes-->
+                <div class="EditButton">
+                    <button type="button" onclick="editBegin()">Edit Playlist</button>
+                    <dialog id="editStart">You are now editing!</dialog>
+                    <script>
+                        const prompt = document.getElementById("editStart")
+                        function editBegin(){
+                            prompt.show();
+                        }
+                    </script>
+                    </div>
+                    
+
+
+            </div>
+
+            <!-- Contains second column content related to playlists-->
+            <div class = "PlaylistContentBox">
+
+                <h1>Playlists</h1>
+
+                <div class="Search">
+                    <input type="text" style="height: 0.5em;" placeholder="Search Playlists...">
+                    </div>
+                    <!--Playlists Dynamically updated with Javascript-->
+                    <div class="ScrollList">
+                        <select name = "PlayLists" size = "30">
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                            <option value="test1">Test</option>
+                           
+                        </select>
+
+                    </div>
+                 
+                    </div>
+
+            <!--Contains third column content related to songs-->
+            <div class ="SongsContentBox">
+
+                <h1>Song Info</h1>
+
+                <div class="Search">
+                <input type="text" style="height:0.5em;" placeholder="Search Songs...">
+                </div>
+
+                <!--To be updated by selection in playlist scrollist using javascript-->
+                <div class="ScrollList">
+                    <select name = "songs" size = "30">
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                        <option value="test1">Test</option>
+                       
+                    </select>
+
+                </div>
+                
+
+                <!-- Finalizes changes done, errors to be listed below the button-->
+                <div class="EditButton">
+                <button type="button" onclick="doneEdit()">Submit Changes</button>
+                <dialog id="changesComplete">Changes Accepted!</dialog>
+
+                <script>
+                    const done = document.getElementById("changesComplete")
+                    function doneEdit(){
+                        done.show();
+                    }
+                </script>
+
+                </div>
+                
+
+            </div>
+
+        </div>
+       
+    </div>
+</body>
+</html>
+

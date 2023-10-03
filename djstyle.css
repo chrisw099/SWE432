@@ -1,0 +1,60 @@
+/*Formatting for Scroll Listboxes, to eventually be js */
+.ScrollList{
+    text-align: center;
+    display: flex;
+    flex-direction:column;
+    margin-top: 30px;
+    justify-content: center;
+    max-height: 100 px;
+    overflow-y:auto;
+    height:50%;
+    resize: none;
+    width:100%;
+    
+}
+
+/* First Column */
+.TimeslotContentBox{
+    display: grid; 
+    grid-template-rows: 5vh 5vh 25vh 20vh 10vh ; 
+    height: 90%; 
+    row-gap:2em; 
+    max-height:90vh;
+}
+
+/* Second Column */
+.PlaylistContentBox{
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 5vh 5vh 50vh 10vh; 
+    row-gap:2em; 
+    max-height:90vh;
+}
+
+/* Third Column */
+.SongsContentBox{
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 5vh 5vh 50vh 10vh; 
+    row-gap:2em; 
+    max-height:90vh;
+}
+
+
+.TimeslotInfo{
+    height:100%;
+    text-align:center;
+}
+
+.EditButton{
+    display:flex;
+    height: 50px;
+    justify-content:center;
+    text-align: center;
+    font-size:.75rem;
+    
+}
+
+h1{
+    text-align:center;
+}
