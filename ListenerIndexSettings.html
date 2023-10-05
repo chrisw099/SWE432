@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link rel="stylesheet" href="group8.css">
+    <title>SWE432</title>
+</head>
+<style>
+    .FocusContent{
+        justify-content: start;
+        margin-left: 16%;
+    }
+    .FlavorText{
+        color: var(--Primary-Cream);
+    }
+    .ProfileForm{
+        display: block;
+    }
+    .ProfileForm .Text{
+        margin: 1em 0 1em 0;
+        display: block;
+        font-family: Helvetica;
+    }
+    input[type=text].TextInput{
+        font-size: 1em;
+        padding: .2em 1em .2em 1em;
+        border-radius: .2em;
+        width: 16em;
+    }
+    input[type=text].Show{
+        font-size: 1em;
+        padding: .2em 1em .2em 1em;
+        border-radius: .2em;
+        width: 30em;
+    }
+    input[type=email].TextInput{
+        border: none;
+        font-size: 1em;
+        padding: .2em 1em .2em 1em;
+        border-radius: .2em;
+        width: 16em;
+        background-color: var(--Primary-Cream);
+    }
+    input[type=submit]{
+        padding: .2em .4em .2em .4em;
+        font-size: 1em;
+        font-family: Helvetica;
+        border-radius: .3em;
+        font-weight: 800;
+        color:var(--Accent-Dark-Cedar);
+    }
+    .ButtonElement{
+        font-size: 1rem;
+        border: none;
+        background-color: var(--Primary-Cream);
+        color: (--Accent-Dark-Cedar);
+        font-family: Helvetica;
+    }
+    .Profile h1{
+        color: var(--Primary-Cream);
+        font-family: Helvetica;
+        font-size: 1.2em;
+    }
+</style>
+<body>
+    <nav>
+        <div class="NavLeft">
+            <img class="NavImg" src="">
+            <p class="Text NavLabel">Station</p>
+        </div>
+        <div class="NavRight">
+            <ul>
+                <li>
+                    <a href="Home" class="Text">Home</a>
+                </li>
+                <li>
+                    <a href="About" class="Text">About</a>
+                </li>
+                <li>
+                    <a href="Stations" class="Text">Stations</a>
+                </li>
+                <li>
+                    <a href="Artists" class="Text">Artists</a>
+                </li>
+                <li>
+                    <a href="Settings" class="Text">Settings</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="Content">
+        <div class="MainGrid">
+            <article class="FocusContent">
+                <section class="Profile">
+                    <h1>Profile</h1>
+                    <form class="ProfileForm">
+                        <label class="Text FlavorText" for="Img"><img src="" style="background-color:var(--Accent-Dark-Cedar); border-radius: .3em; width: 40px; height: 40px;" class="userImg">Upload Image</label>
+                        <input class="Text" type="file" id="userImage" name="userImg">
+                        <input type="text" class="Text TextInput DisplayName" placeholder="current displayname"/>
+                        <input type="text" class="Text TextInput Username" placeholder="current username"/>
+                        <input type="email" class="Text TextInput email" placeholder="current@email"/>
+                        <button class="Text ButtonElement ChangePassword">Change Password</button>
+                        <br>
+                        <br>
+                        <h1>Preferences</h1>
+                        <Label class="Text FlavorText">Show me more...</Label>
+                        <input type="text" class="Text Show ShowMore" placeholder="Picked Genre, Picked Genre, Picked Genre, Picked Genre"/>
+                        <button class="Text ButtonElement">Add Genre</button>
+                        <Label class="Text FlavorText">Show me less...</Label>
+                        <input type="text" class="Text Show ShowMore" placeholder="Picked Genre, Picked Genre, Picked Genre, Picked Genre"/>
+                        <button class="Text ButtonElement">Add Genre</button>
+                        <input type="submit" class="Text ButtonElement" value="Save Changes">
+                        <input type="submit" class="Text ButtonElement" style="background-color: var(--Accent-Dark-Cedar); color: var(--Primary-Cream)" value="Cancel">
+                    </form>
+                </section>
+            </article>
+        </div>
+    </div>
+</body>
+</html>
+

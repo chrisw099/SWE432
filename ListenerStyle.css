@@ -87,16 +87,6 @@
         text-align: center;
         background-color: var(--Accent-Dark-Cedar);
     }
-    .Sidebar li{
-        display: flex;
-        padding: 2em 0 2em 0;
-        align-items: center;
-        text-align: center;
-        flex-wrap: nowrap;
-        text-decoration: none;
-        color: var(--Accent-Dark-Cedar);
-        font-family: helvetica;
-    }
 
 
     /* declare your amount of columns, 3 for example would be 1fr 1fr 1fr (if you want them to have equal width)*/

@@ -3,10 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <link rel="stylesheet" href="ListenerStyle.css">
+    <link rel="stylesheet" href="group8.css">
     <title>SWE432</title>
 </head>
+<style>
+    .Sidebar li{
+        display: flex;
+        padding: 2em 0 2em 0;
+        align-items: center;
+        text-align: center;
+        flex-wrap: nowrap;
+        text-decoration: none;
+        color: var(--Accent-Dark-Cedar);
+        font-family: helvetica;
+        font-weight: 700;
+    }
+    .Listen{
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        bottom: 0;
+        height: max(2.5vh,50px);
+        width: 100vw;
+    }
+    .ListenBar{
+        display: flexbox;
+        justify-content: center;
+        width: 40em;
+        height: 100%;
+        background-color: var(--Secondary-Cedar);
+    }
+    .ListenBar .Text{
+        margin: .5em 0 0 0;
+        color: var(--Primary-Cream);
+        font-family: Helvetica;
+    }
+    .ProgressBar{
+        margin-top: .5%;
+        margin-left: 10%;
+        margin-right: 10%;
+        border-top: solid var(--Primary-Cream) 2px;
+        color: var(--Primary-Cream);
+    }
+</style>
 <body>
+    <audio> <!-- this will be loaded using javascript -->
+        <source src="" type="">
+      </audio> 
     <nav>
         <div class="NavLeft">
             <img class="NavImg" src="">
@@ -51,39 +95,47 @@
             <article class="FocusContent">
                 <div class="Search">
                     <form class="Form">
-                        <input type="text" clsss="SearchBox" placeholder="Search"/>
+                        <input type="text" class="SearchBox" placeholder="Search"/>
                         <input type="submit" class="Submit"/>
                     </form>
                 </div>
                 <section class="SongGrid">
                     <div class="SongContentBox">
                         <img src="./Assets/JazzImg.png">
-                        <p class="Text">Jazz song 1</p>
+                        <figcaption class="Text">Jazz song 1</figcaption>
                     </div>
                     <div class="SongContentBox">
                         <img src="./Assets/JazzImg.png">
-                        <p class="Text">Jazz song 2</p>
+                        <figcaption class="Text">Jazz song 2</figcaption>
                     </div>
                     <div class="SongContentBox">
                         <img src="./Assets/JazzImg.png">
-                        <p class="Text">Jazz song 3</p>
+                        <figcaption class="Text">Jazz song 3</figcaption>
                     </div>
                     <div class="SongContentBox">
                         <img src="./Assets/JazzImg.png">
-                        <p class="Text">Jazz song 4</p>
+                        <figcaption class="Text">Jazz song 4</figcaption>
                     </div>
                     <div class="SongContentBox">
                         <img src="./Assets/JazzImg.png">
-                        <p class="Text">Jazz song 5</p>
+                        <figcaption class="Text">Jazz song 5</figcaption>
                     </div>
                     <div class="SongContentBox">
                         <img src="./Assets/JazzImg.png">
-                        <p class="Text">Jazz song 6</p>
+                        <figcaption class="Text">Jazz song 6</figcaption>
                     </div>
                 </section>
             </article>
         </div>
     </div>
+    <section class="Listen">
+        <div class="ListenBar">
+            <p class="Text">Playing Song Name</p>
+            <div class="Progress">
+                <div class="ProgressBar">0.00</div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
 
