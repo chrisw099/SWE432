@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <link rel="stylesheet" href="group8.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="djstyle.css">
+    <script type = "text/javascript" src = "djScripts.js" ></script>
     <title>SWE432 DJ Screen</title>
 </head>
 <body>
@@ -44,41 +45,39 @@
                 <h1>Timeslots</h1>
 
                 <div class="Search">
-                    <input type="text" style = "height:0.5em;" placeholder="Search Timeslots...">
+                    <input type="text" name = "tSlotSearch" id = "tsSearchBar" onkeyup="tsSearch()" style = "height:0.5em;" placeholder="Search Timeslots...">
                     </div>
-                    <!-- Dynamically populated with Javascript. Placeholder. Justified to start to line up with other scroll boxes-->
+                    <!-- Eventually populated with database call-->
                     <div class="ScrollList" style="justify-content: start;">
-                        <select name = "tSlots" size = "10">
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
+                        <select name = "tSlots" id = "tsOptList" size = "10">
+                            <option value="test1">Test1</a></option>
+                            <option value="test1">Test2</a></option>
+                            <option value="test1">Test3</a></option>
+                            <option value="test1">Test4</a></option>
+                            <option value="test1">Test5</a></option>
+                            <option value="test1">Test6</a></option>
+                            <option value="test1">Test7</a></option>
+                            <option value="test1">Test8</a></option>
+                            <option value="test1">Test9</a></option>
+                            <option value="test1">Test10</a></option>
+                            <option value="test1">Test11</a></option>
+                            <option value="test1">Test12</a></option>
+                            <option value="test1">Test13</a></option>
+                            <option value="test1">Test14</a></option>
+                            <option value="test1">Test15</a></option>
+                            <option value="test1">Test16</a></option>
                            
                         </select>
 
                     </div>
 
-                <!--To be updated by selection in timeslot scrollist using javascript-->
+               
                 <div class="TimeslotInfo">
                     <h2>Timeslot Information</h2>
                     <br>
-                    Timeslot: 9:00PM
+                    Timeslot: <span id = "timeSlotText">9:00PM</span>
                     <br>
-                    DJ: DJ Name
+                    <span id = "djName">DJ: DJ Name</span>
                     <br>
                     Current Playlist: Coooooool Playlist
                 </div>
@@ -87,12 +86,7 @@
                 <div class="EditButton">
                     <button type="button" onclick="editBegin()">Edit Playlist</button>
                     <dialog id="editStart">You are now editing!</dialog>
-                    <script>
-                        const prompt = document.getElementById("editStart")
-                        function editBegin(){
-                            prompt.show();
-                        }
-                    </script>
+                    <dialog id="editErr">Please Select a timeslot to begin editing!</dialog>
                     </div>
                     
 
@@ -105,65 +99,37 @@
                 <h1>Playlists</h1>
 
                 <div class="Search">
-                    <input type="text" style="height: 0.5em;" placeholder="Search Playlists...">
+                    <input type="text" id = "plSearchBar" onkeyup = "plSearch()" style="height: 0.5em;" placeholder="Search Playlists...">
                     </div>
-                    <!--Playlists Dynamically updated with Javascript-->
+                    <!-- Eventually populated with database call-->
                     <div class="ScrollList">
-                        <select name = "PlayLists" size = "30">
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
-                            <option value="test1">Test</option>
+                        <select name = "PlayLists" id = "plOptList" size = "30">
+                            <option value="test1">Test1</a></option>
+                            <option value="test1">Test2</a></option>
+                            <option value="test1">Test3</a></option>
+                            <option value="test1">Test4</a></option>
+                            <option value="test1">Test5</a></option>
+                            <option value="test1">Test6</a></option>
+                            <option value="test1">Test7</a></option>
+                            <option value="test1">Test8</a></option>
+                            <option value="test1">Test9</a></option>
+                            <option value="test1">Test10</a></option>
+                            <option value="test1">Test11</a></option>
+                            <option value="test1">Test12</a></option>
+                            <option value="test1">Test13</a></option>
+                            <option value="test1">Test14</a></option>
+                            <option value="test1">Test15</a></option>
+                            <option value="test1">Test16</a></option>
+                            <option value="test1">Test17</a></option>
+                            <option value="test1">Test18</a></option>
+                            <option value="test1">Test19</a></option>
+                            <option value="test1">Test20</a></option>
+                            <option value="test1">Test21</a></option>
+                            <option value="test1">Test22</a></option>
+                            <option value="test1">Test23</a></option>
+                            <option value="test1">Test24</a></option>
+                            <option value="test1">Test25</a></option>
+
                            
                         </select>
 
@@ -177,66 +143,37 @@
                 <h1>Song Info</h1>
 
                 <div class="Search">
-                <input type="text" style="height:0.5em;" placeholder="Search Songs...">
+                <input type="text" id = "sSearchBar" onkeyup = "sSearch()"" style="height:0.5em;" placeholder="Search Songs...">
                 </div>
 
-                <!--To be updated by selection in playlist scrollist using javascript-->
+                <!-- Eventually populated with database call-->
                 <div class="ScrollList">
-                    <select name = "songs" size = "30">
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
-                        <option value="test1">Test</option>
+                    <select name = "songs" id = "sOptList" size = "30">
+                        <option value="test1">Test1</a></option>
+                        <option value="test1">Test2</a></option>
+                        <option value="test1">Test3</a></option>
+                        <option value="test1">Test4</a></option>
+                        <option value="test1">Test5</a></option>
+                        <option value="test1">Test6</a></option>
+                        <option value="test1">Test7</a></option>
+                        <option value="test1">Test8</a></option>
+                        <option value="test1">Test9</a></option>
+                        <option value="test1">Test10</a></option>
+                        <option value="test1">Test11</a></option>
+                        <option value="test1">Test12</a></option>
+                        <option value="test1">Test13</a></option>
+                        <option value="test1">Test14</a></option>
+                        <option value="test1">Test15</a></option>
+                        <option value="test1">Test16</a></option>
+                        <option value="test1">Test17</a></option>
+                        <option value="test1">Test18</a></option>
+                        <option value="test1">Test19</a></option>
+                        <option value="test1">Test20</a></option>
+                        <option value="test1">Test21</a></option>
+                        <option value="test1">Test22</a></option>
+                        <option value="test1">Test23</a></option>
+                        <option value="test1">Test24</a></option>
+                        <option value="test1">Test25</a></option>
                        
                     </select>
 
@@ -247,14 +184,7 @@
                 <div class="EditButton">
                 <button type="button" onclick="doneEdit()">Submit Changes</button>
                 <dialog id="changesComplete">Changes Accepted!</dialog>
-
-                <script>
-                    const done = document.getElementById("changesComplete")
-                    function doneEdit(){
-                        done.show();
-                    }
-                </script>
-
+                <dialog id="errBox">Error! Must make selection in all Columns!</dialog>
                 </div>
                 
 
