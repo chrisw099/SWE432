@@ -57,17 +57,17 @@
             "Description": ""
         },
         {
-            "Title": "All Blue",
-            "Artist": "Miles Davis",
-            "AlbumName": "Kind of Blue",
-            "ImagePath": "10-KINDOFBLUE.jpg",
+            "Title": "Cantaloupe Island",
+            "Artist": "Herbie Hancock",
+            "AlbumName": "Empyrean Isles",
+            "ImagePath": "Empisle_hancock.jpg",
             "Description": ""
         },
         {
-            "Title": "All Blue",
-            "Artist": "Miles Davis",
-            "AlbumName": "Kind of Blue",
-            "ImagePath": "10-KINDOFBLUE.jpg",
+            "Title": "Song For My Father",
+            "Artist": "Horace Silver",
+            "AlbumName": "Song For My Father",
+            "ImagePath": "Song_for_My_Father_(Horace_Silver_album_-_cover_art).jpg",
             "Description": ""
         }
     ]
