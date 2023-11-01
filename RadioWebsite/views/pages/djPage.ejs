@@ -5,29 +5,7 @@
 </head>
 <body>
     <nav>
-        <div class="NavLeft">
-            <img class="NavImg" src="">
-            <p class="Text NavLabel">Station</p>
-        </div>
-        <div class="NavRight">
-            <ul>
-                <li>
-                    <a href="Home" class="Text">Home</a>
-                </li>
-                <li>
-                    <a href="About" class="Text">About</a>
-                </li>
-                <li>
-                    <a href="Stations" class="Text">Stations</a>
-                </li>
-                <li>
-                    <a href="Artists" class="Text">Artists</a>
-                </li>
-                <li>
-                    <a href="Settings" class="Text">Settings</a>
-                </li>
-            </ul>
-        </div>
+        <%- include('../partials/nav') %>
     </nav>
     <div class="Content">
 
@@ -46,25 +24,7 @@
                     <div class="ScrollList" style="justify-content: start;">
                         <select name = "tSlots" id = "tsOptList" size = "10">
                             
-                            <!--
-                            <option value="test1">Test1</a></option>
-                            <option value="test1">Test2</a></option>
-                            <option value="test1">Test3</a></option>
-                            <option value="test1">Test4</a></option>
-                            <option value="test1">Test5</a></option>
-                            <option value="test1">Test6</a></option>
-                            <option value="test1">Test7</a></option>
-                            <option value="test1">Test8</a></option>
-                            <option value="test1">Test9</a></option>
-                            <option value="test1">Test10</a></option>
-                            <option value="test1">Test11</a></option>
-                            <option value="test1">Test12</a></option>
-                            <option value="test1">Test13</a></option>
-                            <option value="test1">Test14</a></option>
-                            <option value="test1">Test15</a></option>
-                            <option value="test1">Test16</a></option>
-                            -->
-
+                    
                             <!-- Generate option lists bassed on variables passed to page from server.ejs-->
                             <% options.forEach(function(option){ %>
                             <option><%= option.Name %> </option>
@@ -109,33 +69,7 @@
                     <!-- Eventually populated with database call-->
                     <div class="ScrollList">
                         <select name = "PlayLists" id = "plOptList" size = "30">
-                            <!--
-                            <option value="test1">Test1</a></option>
-                            <option value="test1">Test2</a></option>
-                            <option value="test1">Test3</a></option>
-                            <option value="test1">Test4</a></option>
-                            <option value="test1">Test5</a></option>
-                            <option value="test1">Test6</a></option>
-                            <option value="test1">Test7</a></option>
-                            <option value="test1">Test8</a></option>
-                            <option value="test1">Test9</a></option>
-                            <option value="test1">Test10</a></option>
-                            <option value="test1">Test11</a></option>
-                            <option value="test1">Test12</a></option>
-                            <option value="test1">Test13</a></option>
-                            <option value="test1">Test14</a></option>
-                            <option value="test1">Test15</a></option>
-                            <option value="test1">Test16</a></option>
-                            <option value="test1">Test17</a></option>
-                            <option value="test1">Test18</a></option>
-                            <option value="test1">Test19</a></option>
-                            <option value="test1">Test20</a></option>
-                            <option value="test1">Test21</a></option>
-                            <option value="test1">Test22</a></option>
-                            <option value="test1">Test23</a></option>
-                            <option value="test1">Test24</a></option>
-                            <option value="test1">Test25</a></option>
-                            -->
+                            
                                 <!-- Generate option lists bassed on variables passed to page from server.ejs-->
                                 <% options.forEach(function(option){ %>
                                     <option><%= option.Name %> </option>
@@ -160,33 +94,7 @@
                 <!-- Eventually populated with database call-->
                 <div class="ScrollList">
                     <select name = "songs" id = "sOptList" size = "30">
-                        <!--
-                        <option value="test1">Test1</a></option>
-                        <option value="test1">Test2</a></option>
-                        <option value="test1">Test3</a></option>
-                        <option value="test1">Test4</a></option>
-                        <option value="test1">Test5</a></option>
-                        <option value="test1">Test6</a></option>
-                        <option value="test1">Test7</a></option>
-                        <option value="test1">Test8</a></option>
-                        <option value="test1">Test9</a></option>
-                        <option value="test1">Test10</a></option>
-                        <option value="test1">Test11</a></option>
-                        <option value="test1">Test12</a></option>
-                        <option value="test1">Test13</a></option>
-                        <option value="test1">Test14</a></option>
-                        <option value="test1">Test15</a></option>
-                        <option value="test1">Test16</a></option>
-                        <option value="test1">Test17</a></option>
-                        <option value="test1">Test18</a></option>
-                        <option value="test1">Test19</a></option>
-                        <option value="test1">Test20</a></option>
-                        <option value="test1">Test21</a></option>
-                        <option value="test1">Test22</a></option>
-                        <option value="test1">Test23</a></option>
-                        <option value="test1">Test24</a></option>
-                        <option value="test1">Test25</a></option>
-                        -->
+                        
                             <!-- Generate option lists bassed on variables passed to page from server.ejs-->
                             <% options.forEach(function(option){ %>
                                 <option><%= option.Name %> </option>
