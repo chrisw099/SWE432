@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <nav>
+        <div class="NavLeft">
+            <img class="NavImg" src="">
+            <p class="Text NavLabel">Station</p>
+        </div>
+        <div class="NavRight">
+            <ul>
+                <li>
+                    <a href="Home" class="Text">Home</a>
+                </li>
+                <li>
+                    <a href="About" class="Text">About</a>
+                </li>
+                <li>
+                    <a href="Stations" class="Text">Stations</a>
+                </li>
+                <li>
+                    <a href="Artists" class="Text">Artists</a>
+                </li>
+                <li>
+                    <a href="Settings" class="Text">Settings</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="Content">
+
+        <!-- Containts the 3 columns used to display information-->
+        <div class ="MainGrid" style= "grid-template-columns: 1fr 1fr 1fr; width:100%; justify-content:center; min-height: 50vh; max-height:90vh; grid-auto-flow:column">
+
+            <!--Contains first column content related to timeslot AND the button to begin editing-->
+            <div class="TimeslotContentBox">
+
+                <h1>Timeslots</h1>
+
+                <div class="Search">
+                    <input type="text" name = "tSlotSearch" id = "tsSearchBar" onkeyup="tsSearch()" style = "height:0.5em;" placeholder="Search Timeslots...">
+                    </div>
+                    <!-- Eventually populated with database call-->
+                    <div class="ScrollList" style="justify-content: start;">
+                        <select name = "tSlots" id = "tsOptList" size = "10">
+                            
+                            <!--
+                            <option value="test1">Test1</a></option>
+                            <option value="test1">Test2</a></option>
+                            <option value="test1">Test3</a></option>
+                            <option value="test1">Test4</a></option>
+                            <option value="test1">Test5</a></option>
+                            <option value="test1">Test6</a></option>
+                            <option value="test1">Test7</a></option>
+                            <option value="test1">Test8</a></option>
+                            <option value="test1">Test9</a></option>
+                            <option value="test1">Test10</a></option>
+                            <option value="test1">Test11</a></option>
+                            <option value="test1">Test12</a></option>
+                            <option value="test1">Test13</a></option>
+                            <option value="test1">Test14</a></option>
+                            <option value="test1">Test15</a></option>
+                            <option value="test1">Test16</a></option>
+                            -->
+
+                            <!-- Generate option lists bassed on variables passed to page from server.ejs-->
+                            <% options.forEach(function(option){ %>
+                            <option><%= option.Name %> </option>
+                            <% }); %>
+                           
+                            
+                           
+                        </select>
+
+                    </div>
+
+               
+                <div class="TimeslotInfo">
+                    <h2>Timeslot Information</h2>
+                    <br>
+                    Timeslot: <span id = "timeSlotText">9:00PM</span>
+                    <br>
+                    <span id = "djName">DJ: DJ Name</span>
+                    <br>
+                    Current Playlist: Coooooool Playlist
+                </div>
+                
+                <!-- Used to begin editing process, after pushing the column selections are validated towards making changes-->
+                <div class="EditButton">
+                    <button type="button" onclick="editBegin()">Edit Playlist</button>
+                    <dialog id="editStart">You are now editing!</dialog>
+                    <dialog id="editErr">Please Select a timeslot to begin editing!</dialog>
+                    </div>
+                    
+
+
+            </div>
+
+            <!-- Contains second column content related to playlists-->
+            <div class = "PlaylistContentBox">
+
+                <h1>Playlists</h1>
+
+                <div class="Search">
+                    <input type="text" id = "plSearchBar" onkeyup = "plSearch()" style="height: 0.5em;" placeholder="Search Playlists...">
+                    </div>
+                    <!-- Eventually populated with database call-->
+                    <div class="ScrollList">
+                        <select name = "PlayLists" id = "plOptList" size = "30">
+                            <!--
+                            <option value="test1">Test1</a></option>
+                            <option value="test1">Test2</a></option>
+                            <option value="test1">Test3</a></option>
+                            <option value="test1">Test4</a></option>
+                            <option value="test1">Test5</a></option>
+                            <option value="test1">Test6</a></option>
+                            <option value="test1">Test7</a></option>
+                            <option value="test1">Test8</a></option>
+                            <option value="test1">Test9</a></option>
+                            <option value="test1">Test10</a></option>
+                            <option value="test1">Test11</a></option>
+                            <option value="test1">Test12</a></option>
+                            <option value="test1">Test13</a></option>
+                            <option value="test1">Test14</a></option>
+                            <option value="test1">Test15</a></option>
+                            <option value="test1">Test16</a></option>
+                            <option value="test1">Test17</a></option>
+                            <option value="test1">Test18</a></option>
+                            <option value="test1">Test19</a></option>
+                            <option value="test1">Test20</a></option>
+                            <option value="test1">Test21</a></option>
+                            <option value="test1">Test22</a></option>
+                            <option value="test1">Test23</a></option>
+                            <option value="test1">Test24</a></option>
+                            <option value="test1">Test25</a></option>
+                            -->
+                                <!-- Generate option lists bassed on variables passed to page from server.ejs-->
+                                <% options.forEach(function(option){ %>
+                                    <option><%= option.Name %> </option>
+                                    <% }); %>
+                            
+                           
+                        </select>
+
+                    </div>
+                 
+                    </div>
+
+            <!--Contains third column content related to songs-->
+            <div class ="SongsContentBox">
+
+                <h1>Song Info</h1>
+
+                <div class="Search">
+                <input type="text" id = "sSearchBar" onkeyup = "sSearch()"" style="height:0.5em;" placeholder="Search Songs...">
+                </div>
+
+                <!-- Eventually populated with database call-->
+                <div class="ScrollList">
+                    <select name = "songs" id = "sOptList" size = "30">
+                        <!--
+                        <option value="test1">Test1</a></option>
+                        <option value="test1">Test2</a></option>
+                        <option value="test1">Test3</a></option>
+                        <option value="test1">Test4</a></option>
+                        <option value="test1">Test5</a></option>
+                        <option value="test1">Test6</a></option>
+                        <option value="test1">Test7</a></option>
+                        <option value="test1">Test8</a></option>
+                        <option value="test1">Test9</a></option>
+                        <option value="test1">Test10</a></option>
+                        <option value="test1">Test11</a></option>
+                        <option value="test1">Test12</a></option>
+                        <option value="test1">Test13</a></option>
+                        <option value="test1">Test14</a></option>
+                        <option value="test1">Test15</a></option>
+                        <option value="test1">Test16</a></option>
+                        <option value="test1">Test17</a></option>
+                        <option value="test1">Test18</a></option>
+                        <option value="test1">Test19</a></option>
+                        <option value="test1">Test20</a></option>
+                        <option value="test1">Test21</a></option>
+                        <option value="test1">Test22</a></option>
+                        <option value="test1">Test23</a></option>
+                        <option value="test1">Test24</a></option>
+                        <option value="test1">Test25</a></option>
+                        -->
+                            <!-- Generate option lists bassed on variables passed to page from server.ejs-->
+                            <% options.forEach(function(option){ %>
+                                <option><%= option.Name %> </option>
+                                <% }); %>
+                       
+                    </select>
+
+                </div>
+                
+
+                <!-- Finalizes changes done, errors to be listed below the button-->
+                <div class="EditButton">
+                <button type="button" onclick="doneEdit()">Submit Changes</button>
+                <dialog id="changesComplete">Changes Accepted!</dialog>
+                <dialog id="errBox">Error! Must make selection in all Columns!</dialog>
+                </div>
+                
+
+            </div>
+
+        </div>
+       
+    </div>
+</body>
+</html>
+
