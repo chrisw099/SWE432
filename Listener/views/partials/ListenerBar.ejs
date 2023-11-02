@@ -1,0 +1,49 @@
+<style>
+    .Sidebar li{
+        display: flex;
+        padding: 2em 0 2em 0;
+        align-items: center;
+        text-align: center;
+        flex-wrap: nowrap;
+        text-decoration: none;
+        color: var(--Accent-Dark-Cedar);
+        font-family: helvetica;
+        font-weight: 700;
+    }
+    .Listen{
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        bottom: 0;
+        height: max(2.5vh,50px);
+        width: 100vw;
+    }
+    .ListenBar{
+        display: flexbox;
+        justify-content: center;
+        width: 40em;
+        height: 100%;
+        background-color: var(--Secondary-Cedar);
+    }
+    .ListenBar .Text{
+        margin: .5em 0 0 0;
+        color: var(--Primary-Cream);
+        font-family: Helvetica;
+    }
+    .ProgressBar{
+        margin-top: .5%;
+        margin-left: 10%;
+        margin-right: 10%;
+        border-top: solid var(--Primary-Cream) 2px;
+        color: var(--Primary-Cream);
+    }
+</style>
+<section class="Listen">
+    <div class="ListenBar">
+        <p class="Text"><%= playingsong.Title %></p>
+        <div class="Progress">
+            <div class="ProgressBar">0.00</div>
+        </div>
+    </div>
+</section>
