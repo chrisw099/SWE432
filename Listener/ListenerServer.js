@@ -1,48 +1,46 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const mongoose = require('mongoose');
+const app = express();
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname +'/static'));
 
+mongoose.connect('mongodb://127.0.0.1:27017/swe432');
+const db = mongoose.connection;
 
-app.get('/Listener', function(req, res) {
-    var songsl = [
-    {"Title": "What a Wonderful World","Artist": "Louis Armstrong","AlbumName": "","ImagePath": "Louis_Armstrong_What_a_Wonderful_World.jpg","Description": ""},
-    {"Title": "Giant Steps","Artist": "John Coltrane","AlbumName": "Giant Steps","ImagePath": "Coltrane_Giant_Steps.jpg","Description": ""},
-    {"Title": "Fly Me to The Moon","Artist": "Frank Sinatra","AlbumName": "Giant Steps","ImagePath": "qe9o9pdvuu49b_600.jpg","Description": ""},
-    {"Title": "'Round Midnight","Artist": "Thelonious Monk","AlbumName": "","ImagePath": "round-midnight.jpg","Description": ""},
-    {"Title": "All Blue","Artist": "Miles Davis","AlbumName": "Kind of Blue","ImagePath": "10-KINDOFBLUE.jpg","Description": ""},
-    {"Title": "A Night in Tunisia","Artist": "Dizzy Gillespie","AlbumName": "","ImagePath": "maxresdefault.jpg","Description": ""},
-    {"Title": "Goodbye Pork Pie Hat","Artist": "Charles Mingus","AlbumName": "Mingus Mingus Mingus Mingus Mingus","ImagePath": "Charles_Mingus_Mingus_Mingus_Mingus_Mingus_Mingus.jpg","Description": "" },
-    {"Title": "Stolen Moments","Artist": "Oliver Nelson","AlbumName": "The Blues and the Abstract Truth","ImagePath": "The_Blues_and_the_Abstract_Truth_(Oliver_Nelson_album_-_cover_art).jpg","Description": ""},
-    {"Title": "Cantaloupe Island","Artist": "Herbie Hancock","AlbumName": "Empyrean Isles","ImagePath": "Empisle_hancock.jpg","Description": ""},
-    {"Title": "Song For My Father","Artist": "Horace Silver","AlbumName": "Song For My Father","ImagePath": "Song_for_My_Father_(Horace_Silver_album_-_cover_art).jpg","Description": ""}]
-    var playingsong = songsl[6]
+const songSchema = new mongoose.Schema({
+  _id: String,
+  Title: String,
+  Artist: String,
+  AlbumName: String,
+  ImagePath: String,
+  Description: String
+});
+
+db.once('open', () => {
+    console.log('DEBUG: Mongo session has been connected');
+});
+
+app.get('/Listener', async function(req, res) {
+  let songs = mongoose.model('SongList', songSchema, 'SongList');
+  let songslist = await songs.find();
+  let playingsong = songslist[6];
   
-    res.render('pages/ListenerHome', {
-      songsl: songsl,
-      playingsong: playingsong
-    });
+  res.render('pages/ListenerHome', {
+    songsl: songslist,
+    playingsong: playingsong
   });
+});
 
 
-  app.get('/ListenerSettings', function(req, res) {
-    var songs = JSON.stringify([
-    {"Title": "What a Wonderful World","Artist": "Louis Armstrong","AlbumName": "","ImagePath": "Louis_Armstrong_What_a_Wonderful_World.jpg","Description": ""},
-    {"Title": "Giant Steps","Artist": "John Coltrane","AlbumName": "Giant Steps","ImagePath": "Coltrane_Giant_Steps.jpg","Description": ""},
-    {"Title": "Fly Me to The Moon","Artist": "Frank Sinatra","AlbumName": "Giant Steps","ImagePath": "Coltrane_Giant_Steps.jpg","Description": ""},
-    {"Title": "'Round Midnight","Artist": "Thelonious Monk","AlbumName": "","ImagePath": "round-midnight.jpg","Description": ""},
-    {"Title": "All Blue","Artist": "Miles Davis","AlbumName": "Kind of Blue","ImagePath": "10-KINDOFBLUE.jpg","Description": ""},
-    {"Title": "A Night in Tunisia","Artist": "Dizzy Gillespie","AlbumName": "","ImagePath": "maxresdefault.jpg","Description": ""},
-    {"Title": "Goodbye Pork Pie Hat","Artist": "Charles Mingus","AlbumName": "Mingus Mingus Mingus Mingus Mingus","ImagePath": "Charles_Mingus_Mingus_Mingus_Mingus_Mingus_Mingus.jpg","Description": "" },
-    {"Title": "Stolen Moments","Artist": "Oliver Nelson","AlbumName": "The Blues and the Abstract Truth","ImagePath": "The_Blues_and_the_Abstract_Truth_(Oliver_Nelson_album_-_cover_art).jpg","Description": ""},
-    {"Title": "Cantaloupe Island","Artist": "Herbie Hancock","AlbumName": "Empyrean Isles","ImagePath": "Empisle_hancock.jpg","Description": ""},
-    {"Title": "Song For My Father","Artist": "Horace Silver","AlbumName": "Song For My Father","ImagePath": "Song_for_My_Father_(Horace_Silver_album_-_cover_art).jpg","Description": ""}])
-    var playingsong = songs[6]
+app.get('/ListenerSettings', function(req, res) {
+  var songs = []
+  var playingsong = songs[6]
   
-    res.render('pages/ListenerSettings', {
-      playingsong: playingsong
-    });
+  res.render('pages/ListenerSettings', {
+    playingsong: playingsong
   });
+});
 
+console.log("DEBUG: Server listening in 8080")
 app.listen(8080)
