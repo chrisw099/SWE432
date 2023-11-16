@@ -7,24 +7,24 @@
             <article class="FocusContent">
                 <section class="Profile">
                     <h1>Profile</h1>
-                    <form class="ProfileForm">
+                    <form class="ProfileForm" method="POST">
                         <label class="Text FlavorText" for="Img"><img src="" style="background-color:var(--Accent-Dark-Cedar); border-radius: .3em; width: 40px; height: 40px;" class="userImg">Upload Image</label>
-                        <input class="Text" type="file" id="userImage" name="userImg">
-                        <input type="text" class="Text TextInput DisplayName" placeholder="current displayname"/>
-                        <input type="text" class="Text TextInput Username" placeholder="current username"/>
-                        <input type="email" class="Text TextInput email" placeholder="current@email"/>
-                        <button class="Text ButtonElement ChangePassword">Change Password</button>
+                        <input name="Image" class="Text" type="file" id="userImage" name="userImg">
+                        <input name="DisplayName" type="text" class="Text TextInput DisplayName" placeholder="displayanme"/>
+                        <input name="Username" type="text" class="Text TextInput Username" placeholder="current username"/>
+                        <input name="Email" type="email" class="Text TextInput email Email" placeholder="current@email"/>
+                        <button name="chngpass" class="Text ButtonElement ChangePassword">Change Password</button>
                         <br>
                         <br>
                         <h1>Preferences</h1>
                         <Label class="Text FlavorText">Show me more...</Label>
-                        <input type="text" class="Text Show ShowMore" placeholder="Picked Genre, Picked Genre, Picked Genre, Picked Genre"/>
-                        <button class="Text ButtonElement">Add Genre</button>
+                        <input name="LikedGenres" type="text" class=" LGenre Text Show ShowMore" placeholder="Picked Genre, Picked Genre, Picked Genre, Picked Genre"/>
+                        <button name="addPGenre" class="Text ButtonElement">Add Genre</button>
                         <Label class="Text FlavorText">Show me less...</Label>
-                        <input type="text" class="Text Show ShowMore" placeholder="Picked Genre, Picked Genre, Picked Genre, Picked Genre"/>
-                        <button class="Text ButtonElement">Add Genre</button>
-                        <input type="submit" class="Text ButtonElement" value="Save Changes">
-                        <input type="submit" class="Text ButtonElement" style="background-color: var(--Accent-Dark-Cedar); color: var(--Primary-Cream)" value="Cancel">
+                        <input name="DislikedGenres" type="text" class=" DGenre Text Show ShowMore" placeholder="Picked Genre, Picked Genre, Picked Genre, Picked Genre"/>
+                        <button name="addNGenre" class="Text ButtonElement">Add Genre</button>
+                        <input name="savesub" type="submit" class="savesub Text ButtonElement" value="Save Changes">
+                        <input name="exitsub" type="submit" class="Text ButtonElement" style="background-color: var(--Accent-Dark-Cedar); color: var(--Primary-Cream)" value="Cancel">
                     </form>
                 </section>
             </article>
@@ -32,3 +32,4 @@
     </div>
 </body>
 </html>
+<script src="javascript/Settings.js"></script>

@@ -1,5 +1,4 @@
 let doc = document;
-console.log(songs);
 let search = ""
 
 
@@ -40,6 +39,7 @@ function searchSubmit(key){
                 alert("Please search for something!");
             }
             searchresults();
+            doc.querySelector(".SearchBox").value = "";
             search = "";
         }
         else{
@@ -48,32 +48,22 @@ function searchSubmit(key){
     }
 }
 
-function searchresults(){
+async function searchresults(){
+    event.preventDefault();
     console.log(search);
     let songcontent = doc.querySelectorAll(".SongContentBox");
-    let include = []
-    let songindx = 0;
-    for(let i = 0; i < songs.length; i++){
-        if(songs[i].Title.includes(search) || songs[i].Artist.includes(search)){
-            include[songindx] = songs[i];
-            songindx++;
+    let songs = []
+    await fetch("http://localhost:8080/ListenerSearch?search="+search).then(songlist => songlist.json()).then(results => songs = results);
+    console.log(songs)
+    for(let i = 0; i < songcontent.length; i++){
+        let song = songcontent[i];
+        if(i < songs.length){
+            song.querySelector("img").src = "/Assets/"+songs[i].ImagePath;
+            song.querySelector("figcaption").textContent = songs[i].Title;
+            song.style.display = song.ogDisplay;
         }
-    }
-    if(include.length==0){
-        alert("No matching songs were found :(");
-        populateMain(); 
-    }
-    else{
-        for(let i = 0; i < songcontent.length; i++){
-            let song = songcontent[i];
-            if(i < include.length){
-                song.querySelector("img").src = "/Assets/"+include[i].ImagePath;
-                song.querySelector("figcaption").textContent = include[i].Title;
-                song.style.display = song.ogDisplay;
-            }
-            else{
-                song.style.display = "none";
-            }
+        else{
+            song.style.display = "none";
         }
     }
 }

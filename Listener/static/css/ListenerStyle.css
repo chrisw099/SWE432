@@ -207,3 +207,212 @@
     .NegativeButton{
         background-color: var(--Secondary-Cedar);
     }
+    :root{
+        --Primary-Cream: #EDE5DA;
+        --Secondary-Mocha: #827063;
+        --Secondary-Cedar: #52443E;
+        --Accent-Light-Cedar: #9C8677;
+        --Accent-Light-Mocha: #B4A095;
+        --Accent-Dark-Cedar: #382e29;
+    }
+
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+
+    body{
+        background-color: var(--Primary-Cream);
+        padding: 0;
+        margin: 0;
+    }
+
+    nav{
+        background-color: var(--Accent-Light-Mocha);
+        height: max(4vh,60px);
+        display: flex;
+        position: fixed;
+        width:100vw;
+        z-index: 1;
+    }
+
+
+    /*this is your main wrapper around all elements*/
+    .Content{
+        display: flex;
+        padding-top: max(4vh,60px);
+        min-height: 100dvh;
+        bottom: 0;
+        justify-content: center;
+        font-size: calc(1rem + .2vh);
+    }
+
+
+    @media only screen and (min-width: 160rem){
+        .Content{
+            font-size: 2rem;
+        }
+    }
+
+    @media only screen and (max-width: 64rem){
+        .Content{
+            display: flex;
+            padding-top: max(4vh,60px);
+            justify-content: center;
+            font-size: .75rem;
+        }
+    }
+
+    .FocusContent{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .NavImg{
+        background-color: var(--Secondary-Cedar);
+        border-radius: max(10%,10px);
+        height: max(2.5vh,50px);
+        margin-left: 40px;
+        margin-right: 20px;
+        width: max(2.5vh,50px);
+    }
+
+    /*you probably won't need to use this*/
+    .Sidebar{
+        padding-top: max(4vh,60px);
+        position: fixed;
+        height: 100vh;
+        width: calc(16vw - 2em);
+        background-color: var(--Secondary-Mocha);
+    }
+
+    .Sidebar .Text{
+        font-size: 1.5em;
+        font-family: Helvetica;
+        color: var(--Primary-Cream);
+        margin: 0;
+        padding: 1em 0 1em 0;
+        text-align: center;
+        background-color: var(--Accent-Dark-Cedar);
+    }
+
+
+    /* declare your amount of columns, 3 for example would be 1fr 1fr 1fr (if you want them to have equal width)*/
+    .MainGrid{
+        background-color: var(--Secondary-Mocha);
+        width: max(25em,60vw);
+        margin-top: 5em;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    /*nav bar elements, unless you need to deviate heavily from the plan, you shouldn't need to edit this*/
+    .NavLeft{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        width: 200px;
+    }
+
+    .NavRight{
+        margin-left: auto;
+    }
+
+    .NavRight ul{
+        margin-top: 0;
+    }
+
+    .NavRight li{
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        padding-left: 12px;
+        padding-right: 12px;
+        height: max(4vh,60px);
+        text-decoration: none;
+        border-left: 2px solid var(--Secondary-Cedar);
+    }
+
+    .NavRight li:nth-child(1){
+        border-left: 0;
+    }
+
+    .NavRight li:nth-last-child(1){
+        background-color: var(--Secondary-Mocha);
+    }
+
+    nav .Text{
+        color:var(--Secondary-Cedar);
+        font-size: 1.2rem;
+        font-family: Helvetica;
+        font-weight: 600;
+    }
+    /*nav section end*/
+
+
+    .SongContentBox{
+        display: flex-box;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .SongContentBox img{
+        width: 100%;
+    }
+
+    .SongContentBox .Text{
+        color: var(--Accent-Dark-Cedar);
+        font-family: Helvetica;
+        font-weight: 600;
+    }
+    .SongGrid{
+        display: grid;
+        width: 80%;
+        grid-row-gap: 1em;
+        grid-column-gap: 2em;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    @media  screen and (max-width: 84rem){
+        .SongGrid{
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .Search{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 2em;
+        height: 7em;
+    }
+
+    input[type=text]{
+        border: none;
+        font-size: 1.3em;
+        padding: .5em;
+        border-radius: 1em;
+        width: 16em;
+        background-color: var(--Primary-Cream);
+    }
+
+    .Submit{
+        display: none;
+    }
+
+    button{
+        padding: .2em .4em .2em .4em;
+        font-size: 1.2em;
+        font-family: Helvetica;
+        border-radius: .3em;
+    }
+    
+    .ActionButton{
+        background-color: var(--Primary-Cream);
+        border: .15em solid var(--Accent-Dark-Cedar);
+    }
+
+    .NegativeButton{
+        background-color: var(--Secondary-Cedar);
+    }
