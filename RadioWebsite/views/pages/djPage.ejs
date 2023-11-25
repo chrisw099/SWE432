@@ -9,6 +9,8 @@
     </nav>
     <div class="Content">
 
+       
+
         <!-- Containts the 3 columns used to display information-->
         <div class ="MainGrid" style= "grid-template-columns: 1fr 1fr 1fr; width:100%; justify-content:center; min-height: 50vh; max-height:90vh; grid-auto-flow:column">
 
@@ -22,7 +24,7 @@
                     </div>
                     <!-- Eventually populated with database call-->
                     <div class="ScrollList" style="justify-content: start;">
-                        <select name = "tSlots" id = "tsOptList" size = "10">
+                        <select name = "tSlots" id = "tsOptList" size = "10" type="text" form="plform">
                             
                     
                             <!-- Generate option lists bassed on variables passed to page from server.ejs-->
@@ -40,9 +42,9 @@
                 <div class="TimeslotInfo">
                     <h2>Timeslot Information</h2>
                     <br>
-                    Timeslot: <span id = "timeSlotText">9:00PM</span>
+                    Timeslot: <span id = "timeSlotText">Select a Timeslot!</span>
                     <br>
-                    DJ:<span id = "djName">DJ Name</span>
+                    DJ: <span id = "djName">DJ Name</span>
                     <br>
                     Current Playlist : <span id = "cPlaylist">Coooool Playlist</span>
                 </div>
@@ -68,7 +70,7 @@
                     </div>
                     <!-- Eventually populated with database call-->
                     <div class="ScrollList">
-                        <select name = "PlayLists" id = "plOptList" size = "30">
+                        <select form="plform" name ="PlayLists" id = "plOptList" size = "30" >
                             
                                 <!-- Generate option lists bassed on variables passed to page from server.ejs-->
                                 <% plOptions.forEach(function(option){ %>
@@ -93,7 +95,7 @@
 
                 <!-- Eventually populated with database call-->
                 <div class="ScrollList">
-                    <select name = "songs" id = "sOptList" size = "30">
+                    <select form="plform" name = "songs" id = "sOptList" size = "30" >
                         
                             <!-- Generate option lists bassed on variables passed to page from server.ejs-->
                             <% sOption.forEach(function(option){ %>
@@ -107,15 +109,26 @@
 
                 <!-- Finalizes changes done, errors to be listed below the button-->
                 <div class="EditButton">
-                <button type="button" onclick="doneEdit()">Submit Changes</button>
+                
+                <form action="/plUpdate" id ="plform" method = "POST">
+
+                <!-- onclick="doneEdit()" -->
+
+                <button type="Submit">Submit Changes</button>
+                </form>
                 <dialog id="changesComplete">Changes Accepted!</dialog>
-                <dialog id="errBox">Error! Must make selection in all Columns!</dialog>
+                <dialog id="errBox">Error! Must make selection in all Columns!</dialog> 
+                
+                
+                
                 </div>
                 
 
             </div>
 
         </div>
+
+        
        
     </div>
 </body>

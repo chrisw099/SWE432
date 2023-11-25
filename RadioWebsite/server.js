@@ -6,6 +6,7 @@ var session = require('express-session');
 var parseurl = require('parseurl');
 const ejs = require('ejs');
 const app = express();
+app.use(express.urlencoded({extended: true}));
 
 
 app.set('trust proxy', 1)
@@ -63,9 +64,66 @@ app.get('/', async function(req, res){
 
     });
 
-   
+
 });
 
+app.post('/plUpdate', async function(req, res){
+
+    const timeSlot = req.body.tSlots
+    const song = req.body.songs
+
+    const cPList = await Timeslot.findOne({timeslot: timeSlot}, {playlist:1})
+
+    console.log("Playlist: " + cPList);
+
+    var newSong = {name: song};
+
+    var updateLog = await db.collection("playlists").findOneAndUpdate({'name' : cPList.playlist}, {$push : {songs: newSong}});
+
+    console.log ("Song is "+ song);
+    console.log("Timeslot is " + timeSlot);
+    console.log("Playlist is "+ cPList);
+    console.log("UpdateLog : " + updateLog)
+
+    const plOpt = await Playlist.find({}, {name: 1, songs:1});
+    const sOpt = await Song.find({}, {name: 1});
+    const tOpt = await Timeslot.find({}, {timeslot:1, playlist:1, dj:1 })
+
+    res.render('pages/djPage', {
+        plOptions: plOpt,
+        sOption : sOpt,
+        tOption : tOpt
+
+    });
+});
+
+app.get('/filterSongs', async function(req,res){
+
+    const Playlist = require('./models/Playlist.js')
+    let search =  req.query.search;
+
+    console.log("Search : " + search);
+
+    let songList = await Playlist.findOne({'name' : search},{songs:1});
+
+    //console.log(songList);
+
+    res.json(songList);
+});
+
+app.get('/tsLookup', async function(req,res){
+
+    const Playlist = require('./models/Timeslot.js')
+    let search =  req.query.search;
+
+    console.log("Search : " + search);
+
+    let tsList = await Timeslot.findOne({'timeslot' : search},{timeslot: 1, dj: 1, playlist:1});
+
+    console.log(tsList)
+
+    res.json(tsList);
+});
 
 
 

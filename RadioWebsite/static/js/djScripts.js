@@ -145,37 +145,67 @@ tsInfo.addEventListener("click", function(){
 });
 
 //Update timeslot when another option is selected
-tsInfo.addEventListener("change", function(){
+tsInfo.addEventListener("change", async function(){
 
     tsList = document.getElementById("tsOptList")
     tsSelected = tsList.options[tsList.selectedIndex].text;
 
     tsField = document.getElementById("timeSlotText");
-    tsField.textContent = tsSelected;
-    
+    //tsField.textContent = tsSelected;
+
+    djField = document.getElementById("djName");
+    plField = document.getElementById("cPlaylist");
+
+    var info;
+
+    await fetch("http://localhost:8080/tsLookup?search=" + tsSelected).then(timeSlot => timeSlot.json()).then(results => info = results);
+
+    //console.log("info: " + info.timeslot);
+    tsField.textContent = info.timeslot;
+    djField.textContent = info.dj;
+    plField.textContent = info.playlist;
+
+
 });
 
 //Update Song List based on Playlist Selection. Will eventually check properties of songs pulled from database to filter the song list instead of just name.
+
 var plList = document.getElementById("plOptList");
 
-plList.addEventListener("click", function(){
+plList.addEventListener("click",  async function(){
 
     input = document.getElementById("plOptList");
+
+    sText = input.options[input.selectedIndex].text;
+
+    let songs = []
+
+    await fetch("http://localhost:8080/filterSongs?search=" + sText).then(songList => songList.json()).then(results => songs = results);
+
+    console.log("songs: " + songs.songs);
     
-    filter = input.options[input.selectedIndex].text.toUpperCase();
+    
+    filter = JSON.stringify(songs.songs).toUpperCase();//input.options[input.selectedIndex].text.toUpperCase();
+
+    console.log(filter);
+
 
     selectList = document.getElementById("sOptList");
 
+
+    
     for( i = 0; i < selectList.length; i++){
         txtval = selectList.options[i].text;
-        if(txtval.toUpperCase().indexOf(filter) > - 1){
+        if(filter.includes(txtval.toUpperCase())){//txtval.toUpperCase().indexOf(filter) > - 1){
             selectList.options[i].style.display = "";
         }else{
             selectList.options[i].style.display = "none";
         }
     }
+    
 
 });
+
 
 });
    
