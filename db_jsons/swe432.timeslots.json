@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "655533acc0412d44ec479de2"
+  },
+  "Timeslot": "9:00 AM",
+  "Playlist": "playlist1",
+  "Dj": "Art Blakey"
+},
+{
+  "_id": {
+    "$oid": "655533acc0412d44ec479de4"
+  },
+  "Timeslot": "11:00 AM",
+  "Playlist": "playlist1",
+  "Dj": "John Coltrane"
+},
+{
+  "_id": {
+    "$oid": "6555b0e6c0412d44ec479dfc"
+  },
+  "Timeslot": "12:00 PM",
+  "Playlist": "playlist1",
+  "Dj": "Cannonball Adderly"
+},
+{
+  "_id": {
+    "$oid": "6555b0e6c0412d44ec479dfd"
+  },
+  "Timeslot": "1:00 PM",
+  "Playlist": "playlist2",
+  "Dj": "Miles Davis"
+},
+{
+  "_id": {
+    "$oid": "6555b0e6c0412d44ec479dfe"
+  },
+  "Timeslot": "2:00 PM",
+  "Playlist": "playlist1",
+  "Dj": "Thelonius Monk"
+}]

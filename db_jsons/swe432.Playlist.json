@@ -1,0 +1,132 @@
+[{
+  "_id": {
+    "$oid": "65681d03d642058d78ef6163"
+  },
+  "timeslot": "9:00 AM - 10:00 AM",
+  "dj": "DJ Name",
+  "playlist": "Playlist Name",
+  "songs": [
+    {
+      "Title": "What a Wonderful World",
+      "Artist": "Louis Armstrong",
+      "AlbumName": "",
+      "ImagePath": "Louis_Armstrong_What_a_Wonderful_World.jpg",
+      "Description": ""
+    },
+    {
+      "Title": "Giant Steps",
+      "Artist": "John Coltrane",
+      "AlbumName": "Giant Steps",
+      "ImagePath": "Coltrane_Giant_Steps.jpg",
+      "Description": ""
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65681d03d642058d78ef6164"
+  },
+  "timeslot": "10:00 AM - 11:00 AM",
+  "dj": "DJ Name",
+  "playlist": "Playlist Name",
+  "songs": []
+},
+{
+  "_id": {
+    "$oid": "65681d03d642058d78ef6165"
+  },
+  "timeslot": "11:00 AM - 12:00 PM",
+  "dj": "DJ Name",
+  "playlist": "Playlist Name",
+  "songs": []
+},
+{
+  "_id": {
+    "$oid": "65681d03d642058d78ef6166"
+  },
+  "timeslot": "12:00 PM - 1:00 PM",
+  "dj": "DJ Name",
+  "playlist": "Playlist Name",
+  "songs": []
+},
+{
+  "_id": {
+    "$oid": "65681d03d642058d78ef6167"
+  },
+  "timeslot": "1:00 PM - 2:00 PM",
+  "dj": "DJ Name",
+  "playlist": "Playlist Name",
+  "songs": []
+},
+{
+  "_id": {
+    "$oid": "65681d03d642058d78ef6168"
+  },
+  "timeslot": "2:00 PM - 3:00 PM",
+  "dj": "DJ Name",
+  "playlist": "Playlist Name",
+  "songs": []
+},
+{
+  "_id": {
+    "$oid": "65681d03d642058d78ef6169"
+  },
+  "timeslot": "3:00 PM - 4:00 PM",
+  "dj": "DJ Name",
+  "playlist": "Playlist Name",
+  "songs": []
+},
+{
+  "_id": {
+    "$oid": "65681d03d642058d78ef616a"
+  },
+  "timeslot": "4:00 PM - 5:00 PM",
+  "dj": "DJ Name",
+  "playlist": "Playlist Name",
+  "songs": []
+},
+{
+  "_id": {
+    "$oid": "65681d03d642058d78ef616b"
+  },
+  "timeslot": "5:00 PM - 6:00 PM",
+  "dj": "DJ Name",
+  "playlist": "Playlist Name",
+  "songs": []
+},
+{
+  "_id": {
+    "$oid": "65681d03d642058d78ef616c"
+  },
+  "timeslot": "6:00 PM - 7:00 PM",
+  "dj": "DJ Name",
+  "playlist": "Playlist Name",
+  "songs": []
+},
+{
+  "_id": {
+    "$oid": "65681d03d642058d78ef616d"
+  },
+  "timeslot": "7:00 PM - 8:00 PM",
+  "dj": "DJ Name",
+  "playlist": "Playlist Name",
+  "songs": []
+},
+{
+  "_id": {
+    "$oid": "65681d03d642058d78ef616e"
+  },
+  "timeslot": "8:00 PM - 9:00 PM",
+  "dj": "DJ Name",
+  "playlist": "Playlist Name",
+  "songs": []
+},
+{
+  "_id": {
+    "$oid": "65681d03d642058d78ef616f"
+  },
+  "timeslot": "9:00 PM - 10:00 PM",
+  "dj": "DJ Name",
+  "playlist": "Playlist Name",
+  "songs": []
+}]
