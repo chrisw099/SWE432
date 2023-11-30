@@ -2,7 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 
-//Me adding
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname +'/static'));
+app.use(express.json())
+
 app.use(express.urlencoded({extended: true}));
 var session = require('express-session');
 var parseurl = require('parseurl');
@@ -26,12 +29,6 @@ app.use(function(req, res, next){
     next()
 })
 
-
-//Not me
-app.set('view engine', 'ejs');
-app.use(express.static(__dirname +'/static'));
-app.use(express.json())
-
 mongoose.connect('mongodb://127.0.0.1:27017/swe432');
 const db = mongoose.connection;
 
@@ -53,6 +50,14 @@ const listenerPreferences = new mongoose.Schema({
   LikedGenres: String,
   DislikedGenres: String
 });
+
+//timeslot for producer
+const timeslotSchema = new mongoose.Schema({
+  timeslot: String,
+  dj: String,
+  playlist: String,
+  songs: [songSchema]
+  });
 
 db.once('open', () => {
     console.log('DEBUG: Mongo session has been connected');
@@ -120,7 +125,58 @@ app.post('/ListenerUpdate*', async function(req, res){
   console.log("Server Updated, "+userdata)
 })
 
-//Me adding
+//Producer part
+const constTimeslots = [
+  { time: '9:00 AM - 10:00 AM' },
+  { time: '10:00 AM - 11:00 AM' },
+  { time: '11:00 AM - 12:00 PM' },
+  { time: '12:00 PM - 1:00 PM' },
+  { time: '1:00 PM - 2:00 PM' },
+  { time: '2:00 PM - 3:00 PM' },
+  { time: '3:00 PM - 4:00 PM' },
+  { time: '4:00 PM - 5:00 PM' },
+  { time: '5:00 PM - 6:00 PM' },
+  { time: '6:00 PM - 7:00 PM' },
+  { time: '7:00 PM - 8:00 PM' },
+  { time: '8:00 PM - 9:00 PM' },
+  { time: '9:00 PM - 10:00 PM' },
+];
+
+const Songs = mongoose.model('SongList', songSchema, 'SongList');
+const PlaylistP = mongoose.model('PlaylistP', timeslotSchema, 'Playlist');
+
+// producer page
+app.get('/Producer', async function(req, res) {
+  let songslist = await Songs.find();
+  let playlistDB = await PlaylistP.find();
+
+  res.render('pages/Producer', { 
+    DBsongs: songslist, 
+    timeslots: constTimeslots,
+    playlist : playlistDB
+   });
+});
+
+// producer add songs
+app.post('/addSong', async (req, res) => {
+  const selectedSongTitle = req.body.selectedSong;
+  const formTimeslot = req.body.selectedTimeslot;
+
+  const selectedSong = await Songs.findOne({title: selectedSongTitle});
+  if (!selectedSong) {
+    return res.status(404).json({ error: 'Selected song not found' });
+  }
+
+  const playlist = await PlaylistP.findOne({timeslot: formTimeslot});
+  if (!playlist) {
+    return res.status(404).json({error: 'Playlist not found'});
+  }
+
+  playlist.songs.push(selectedSong);
+  await playlist.save();
+
+  res.redirect('/');
+});
 
 const Playlist = require('./models/Playlist.js')
 const Song = require('./models/Song.js')
@@ -205,6 +261,8 @@ app.get('/tsLookup', async function(req,res){
 
   res.json(tsList);
 });
+
+
 
 
 console.log("DEBUG: Server listening in 8080")
