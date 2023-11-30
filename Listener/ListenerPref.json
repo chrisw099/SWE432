@@ -1,0 +1,11 @@
+[{
+  "_id": {
+    "$oid": "6555c30f566a253854bef5e2"
+  },
+  "Username": "barry",
+  "DisplayName": "barry",
+  "Email": "barry22@gmail.com",
+  "LikedGenres": "jazz, blues",
+  "DislikedGenres": "noise",
+  "uid": 1
+}]
