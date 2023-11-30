@@ -1,0 +1,49 @@
+<%- include('../partials/Header'); %>
+<body>
+    <audio>
+        <source src="" type="">
+      </audio> 
+    <%- include('../partials/Navbar'); %>
+    <%- include('../partials/Side'); %>
+    <div class="Content">
+        <div class="MainGrid">
+            <article class="FocusContent">
+                <div class="Search">
+                    <form class="Form">
+                        <input type="text" class="SearchBox" placeholder="Search"/>
+                    </form>
+                </div>
+                <section class="SongGrid">
+                    <div class="SongContentBox">
+                        <img src="./Assets/JazzImg.png" style="border-radius: 20px; box-shadow: 5px 5px 20px 10px #3d3429;">
+                        <figcaption class="Text">Jazz song 1</figcaption>
+                    </div>
+                    <div class="SongContentBox">
+                        <img src="./Assets/JazzImg.png" style="border-radius: 20px; box-shadow: 5px 5px 20px 10px #3d3429;">
+                        <figcaption class="Text">Jazz song 2</figcaption>
+                    </div>
+                    <div class="SongContentBox">
+                        <img src="./Assets/JazzImg.png" style="border-radius: 20px; box-shadow: 5px 5px 20px 10px #3d3429;">
+                        <figcaption class="Text">Jazz song 3</figcaption>
+                    </div>
+                    <div class="SongContentBox">
+                        <img src="./Assets/JazzImg.png" style="border-radius: 20px; box-shadow: 5px 5px 20px 10px #3d3429;">
+                        <figcaption class="Text">Jazz song 4</figcaption>
+                    </div>
+                    <div class="SongContentBox">
+                        <img src="./Assets/JazzImg.png" style="border-radius: 20px; box-shadow: 5px 5px 20px 10px #3d3429;">
+                        <figcaption class="Text">Jazz song 5</figcaption>
+                    </div>
+                    <div class="SongContentBox">
+                        <img src="./Assets/JazzImg.png" style="border-radius: 20px; box-shadow: 5px 5px 20px 10px #3d3429;">
+                        <figcaption class="Text">Jazz song 6</figcaption>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </div>
+    <%- include('../partials/ListenerBar'); %>
+</body>
+<script>const songs = <%- JSON.stringify(songsl) %>;</script>
+<script src="javascript/Listener.js"></script>
+</html>
